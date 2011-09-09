@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 1) do
+ActiveRecord::Schema.define(:version => 2) do
 
   create_table "accounts", :force => true do |t|
     t.string "name"
@@ -18,6 +18,15 @@ ActiveRecord::Schema.define(:version => 1) do
     t.string "email"
     t.string "crypted_password"
     t.string "role"
+  end
+
+  create_table "workdays", :force => true do |t|
+    t.date    "day"
+    t.time    "enter"
+    t.time    "go_lunch"
+    t.time    "back_lunch"
+    t.time    "out"
+    t.integer "account_id"
   end
 
 end
