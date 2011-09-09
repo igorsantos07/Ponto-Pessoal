@@ -1,6 +1,7 @@
---- 
+---
 :stylesheet: sass
 :renderer: haml
+:admin_renderer: haml
 :script: jquery
 :mock: none
 :test: none
