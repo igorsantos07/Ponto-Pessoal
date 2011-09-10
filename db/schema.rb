@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 2) do
+ActiveRecord::Schema.define(:version => 3) do
 
   create_table "accounts", :force => true do |t|
     t.string "name"
@@ -18,7 +18,10 @@ ActiveRecord::Schema.define(:version => 2) do
     t.string "email"
     t.string "crypted_password"
     t.string "role"
+    t.string "login"
   end
+
+  add_index "accounts", ["login"], :name => "index_accounts_on_login", :unique => true
 
   create_table "workdays", :force => true do |t|
     t.date    "day"
