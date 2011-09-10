@@ -93,3 +93,5 @@ ul.list li .item .avatar{float:left;margin:0 5px 5px 0;width:30px;height:30px;}
 #box .block .content{padding:10px 20px;}
 /* custom */
 .code{font-family: Courier, 'Courier New', monospace;color:#36393D;}
+
+.table .last {white-space: nowrap}

@@ -34,6 +34,11 @@
   =f.select :role, :options => access_control.roles
   %span.description Ex: a simple text
 
+.group
+  =f.label :login
+  =f.error_message_on :login
+  =f.text_field :login, :class => :text_field
+  %span.description Ex: a simple text
 
 .group.navform.wat-cf
   =f.submit pat(:save), :class => :button
