@@ -20,8 +20,8 @@ class Account < ActiveRecord::Base
   ##
   # This method is for authentication purpose
   #
-  def self.authenticate(email, password)
-    account = first(:conditions => { :email => email }) if email.present?
+  def self.authenticate(login, password)
+    account = first(:conditions => { :login => login }) if login.present?
     account && account.has_password?(password) ? account : nil
   end
 
