@@ -1,0 +1,10 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=utf-8", "http-equiv" => "Content-Type"}
+    %title
+      Ponto Pessoal - #{yield_content :title}
+    =stylesheet_link_tag '/stylesheets/main.css'
+    =javascript_include_tag settings.jquery_root+'jquery-1.6.1.min.js'
+  %body
+    =yield

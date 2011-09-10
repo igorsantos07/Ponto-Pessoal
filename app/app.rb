@@ -3,8 +3,37 @@ class PontoPessoal < Padrino::Application
   register Padrino::Rendering
   register Padrino::Mailer
   register Padrino::Helpers
+  register Padrino::Admin::AccessControl
+
+  set :haml, :format => :html5
+
+	set :login_page, '/login'
 
   enable :sessions
+	disable :store_location
+
+  access_control.roles_for :any do |role|
+    role.protect "/"
+		role.allow ["/login", "/about",  "/signup", "/create_session"]
+  end
+
+  access_control.roles_for :user, :admin do |role|
+    role.project_module :lists, "/list"
+    role.project_module :items, "/item"
+  end
+
+  get 'stylesheets/:file.css' do
+    content_type 'text/css', :charset => 'utf-8'
+    sass params[:file]
+  end
+
+  configure :development, :test do
+    set :jquery_root, '/javascripts/jquery/'
+  end
+
+  configure :production do
+    set :jquery_root, 'http://code.jquery.com/'
+  end
 
   ##
   # Caching support
