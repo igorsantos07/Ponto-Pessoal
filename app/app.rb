@@ -18,8 +18,7 @@ class PontoPessoal < Padrino::Application
   end
 
   access_control.roles_for :user, :admin do |role|
-    role.project_module :lists, "/list"
-    role.project_module :items, "/item"
+    role.project_module :workday, "/add"
   end
 
   get 'stylesheets/:file.css' do
