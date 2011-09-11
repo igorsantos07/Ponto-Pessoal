@@ -2,7 +2,7 @@
   -'Hoje, '+Time.now.strftime(settings.full_date_no_seconds)
 
 #buttons
-  =button_to @likely_button[:label], url(:workday, :set, :status => @likely_button[:status]), :method => :post
+  =button_to @likely_button[:label], url(:workday, :set, :status => @likely_button[:status]), :method => :post, :id => :main_button
   #secondary_buttons
     -@other_buttons.each do |button|
       =button_to button[:label], url(:workday, :set, :status => button[:status]), :method => :post

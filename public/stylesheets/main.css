@@ -1,0 +1,81 @@
+body {
+  background-color: #e5e5e5;
+  margin: 0px; }
+
+#header {
+  color: white;
+  background-color: #006666;
+  padding: 10px 0px 1px 0px;
+  text-align: center;
+  text-shadow: 1px 1px 5px #c7d8d8; }
+
+#content {
+  width: 600px;
+  margin: 15px auto;
+  text-align: center; }
+  #content #buttons #main_button input {
+    font-size: 30px;
+    width: 348px;
+    height: 120px; }
+  #content #buttons #secondary_buttons form {
+    display: inline;
+    padding: 0px;
+    margin: 0px; }
+    #content #buttons #secondary_buttons form input {
+      display: inline;
+      width: 110px;
+      height: 35px;
+      margin: 5px 2px; }
+  #content #history {
+    margin-top: 10px;
+    border-top: 1px dashed #006666;
+    padding: 10px 50px 0px 50px; }
+    #content #history table.history {
+      font-size: 13px;
+      border-collapse: collapse;
+      margin: 0px auto 15px auto; }
+      #content #history table.history th {
+        font-size: 16px; }
+      #content #history table.history th, #content #history table.history td {
+        white-space: nowrap;
+        padding: 2px 10px; }
+      #content #history table.history td.negative {
+        color: crimson; }
+      #content #history table.history td.positive {
+        color: darkGreen; }
+      #content #history table.history td.neutral {
+        color: navy; }
+      #content #history table.history td.future {
+        color: #535353; }
+    #content #history table.history.monthly, #content #history table.history.weekly {
+      width: 350px; }
+      #content #history table.history.monthly th.title, #content #history table.history.weekly th.title {
+        width: 80px;
+        border-width: 0px;
+        font-variant: small-caps;
+        font-size: 18px; }
+      #content #history table.history.monthly th.date, #content #history table.history.weekly th.date {
+        border-color: white;
+        border-style: solid;
+        border-width: 1px;
+        font-size: 13px; }
+      #content #history table.history.monthly td.balance, #content #history table.history.weekly td.balance {
+        width: 80px;
+        font-family: monospace;
+        text-align: right;
+        background-color: #f0f0ee;
+        border-color: white;
+        border-style: solid;
+        border-width: 1px 0px 1px 1px; }
+    #content #history table.history.daily {
+      width: 500px; }
+      #content #history table.history.daily td, #content #history table.history.daily th {
+        border-color: white;
+        border-style: solid;
+        border-width: 1px; }
+      #content #history table.history.daily th, #content #history table.history.daily td.balance {
+        background-color: #f0f0ee; }
+      #content #history table.history.daily td {
+        font-family: monospace; }
+      #content #history table.history.daily th {
+        font-variant: small-caps; }
