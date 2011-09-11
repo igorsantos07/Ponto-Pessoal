@@ -6,6 +6,10 @@ class PontoPessoal < Padrino::Application
   register Padrino::Admin::AccessControl
 
   set :haml, :format => :html5
+  set :full_date, '%d/%m/%Y %H:%M:%S'
+  set :full_date_no_seconds, '%d/%m/%Y %H:%M'
+  set :iso_date, '%Y-%m-%d'
+  set :simple_time, '%H:%M'
 
 	set :login_page, '/login'
 
