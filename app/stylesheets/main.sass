@@ -1,7 +1,9 @@
 $darkTeal: #006666
+$teal: #008C8C
 $lightTeal: #F1F8F8
 $lightDarkTeal: #C7D8D8
 $almostWhite: #F0F0EE
+$bg: #E5E5E5
 
 $mainSpacing: 40px
 
@@ -11,8 +13,9 @@ $mainSpacing: 40px
   border-width: $width
 
 body
-  background-color: #E5E5E5
+  background-color: $bg
   margin: 0px
+  font-family: sans-serif
 
 #header
   color: white
@@ -23,11 +26,22 @@ body
 
 #content
   width: 600px
-  margin: $mainSpacing auto 0px auto
+  margin: 0px auto
   text-align: center
+  h2
+    margin: 0px
+    width: 600px
+    background-color: $teal
+    color: white
+    padding: 5px 0px
+    margin-bottom: 10px
+    font-size: 20px
+    text-shadow: 1px 1px 5px $lightDarkTeal
+
   #buttons_block
     width: 120px + ((110px + 6px) * 3) + 30px
-    margin: auto
+    padding-bottom: 30px
+    margin: 0px auto
     #clock
       height: 160px
       float: left
@@ -50,9 +64,7 @@ body
           margin: 5px 2px
 
   #history
-    margin-top: $mainSpacing
-    border-top: 1px dashed $darkTeal
-    padding: $mainSpacing 50px 0px 50px
+    background-color: $bg
 
     table.history
       font-size: 13px

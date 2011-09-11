@@ -1,6 +1,7 @@
 body {
   background-color: #e5e5e5;
-  margin: 0px; }
+  margin: 0px;
+  font-family: sans-serif; }
 
 #header {
   color: white;
@@ -11,11 +12,21 @@ body {
 
 #content {
   width: 600px;
-  margin: 40px auto 0px auto;
+  margin: 0px auto;
   text-align: center; }
+  #content h2 {
+    margin: 0px;
+    width: 600px;
+    background-color: #008c8c;
+    color: white;
+    padding: 5px 0px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-shadow: 1px 1px 5px #c7d8d8; }
   #content #buttons_block {
     width: 498px;
-    margin: auto; }
+    padding-bottom: 30px;
+    margin: 0px auto; }
     #content #buttons_block #clock {
       height: 160px;
       float: left;
@@ -37,9 +48,7 @@ body {
           height: 35px;
           margin: 5px 2px; }
   #content #history {
-    margin-top: 40px;
-    border-top: 1px dashed #006666;
-    padding: 40px 50px 0px 50px; }
+    background-color: #e5e5e5; }
     #content #history table.history {
       font-size: 13px;
       border-collapse: collapse;
