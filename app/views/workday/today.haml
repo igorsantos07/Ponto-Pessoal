@@ -3,5 +3,11 @@
 
 #buttons
   =button_to @likely_button[:label], url(:workday, :set, :status => @likely_button[:status]), :method => :post
-  -@other_buttons.each do |button|
-    =button_to button[:label], url(:workday, :set, :status => button[:status]), :method => :post
+  #secondary_buttons
+    -@other_buttons.each do |button|
+      =button_to button[:label], url(:workday, :set, :status => button[:status]), :method => :post
+
+#history
+  =partial 'workday/history_monthly'
+  =partial 'workday/history_weekly'
+  =partial 'workday/history_daily'
