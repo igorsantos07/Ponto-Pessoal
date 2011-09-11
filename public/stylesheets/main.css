@@ -5,31 +5,41 @@ body {
 #header {
   color: white;
   background-color: #006666;
-  padding: 10px 0px 1px 0px;
+  padding: 1px;
   text-align: center;
   text-shadow: 1px 1px 5px #c7d8d8; }
 
 #content {
   width: 600px;
-  margin: 15px auto;
+  margin: 40px auto 0px auto;
   text-align: center; }
-  #content #buttons #main_button input {
-    font-size: 30px;
-    width: 348px;
-    height: 120px; }
-  #content #buttons #secondary_buttons form {
-    display: inline;
-    padding: 0px;
-    margin: 0px; }
-    #content #buttons #secondary_buttons form input {
-      display: inline;
-      width: 110px;
-      height: 35px;
-      margin: 5px 2px; }
+  #content #buttons_block {
+    width: 498px;
+    margin: auto; }
+    #content #buttons_block #clock {
+      height: 160px;
+      float: left;
+      margin: 0px 10px; }
+    #content #buttons_block #buttons {
+      height: 160px;
+      float: left; }
+      #content #buttons_block #buttons #main_button input {
+        font-size: 30px;
+        width: 348px;
+        height: 120px; }
+      #content #buttons_block #buttons #secondary_buttons form {
+        display: inline;
+        padding: 0px;
+        margin: 0px; }
+        #content #buttons_block #buttons #secondary_buttons form input {
+          display: inline;
+          width: 110px;
+          height: 35px;
+          margin: 5px 2px; }
   #content #history {
-    margin-top: 10px;
+    margin-top: 40px;
     border-top: 1px dashed #006666;
-    padding: 10px 50px 0px 50px; }
+    padding: 40px 50px 0px 50px; }
     #content #history table.history {
       font-size: 13px;
       border-collapse: collapse;

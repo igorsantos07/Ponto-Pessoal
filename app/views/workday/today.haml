@@ -1,11 +1,14 @@
 -content_for :title do
   -'Hoje, '+Time.now.strftime(settings.full_date_no_seconds)
 
-#buttons
-  =button_to @likely_button[:label], url(:workday, :set, :status => @likely_button[:status]), :method => :post, :id => :main_button
-  #secondary_buttons
-    -@other_buttons.each do |button|
-      =button_to button[:label], url(:workday, :set, :status => button[:status]), :method => :post
+#buttons_block
+  %img#clock{:src => '/images/logo.png'}
+  #buttons
+    =button_to @likely_button[:label], url(:workday, :set, :status => @likely_button[:status]), :method => :post, :id => :main_button
+    #secondary_buttons
+      -@other_buttons.each do |button|
+        =button_to button[:label], url(:workday, :set, :status => button[:status]), :method => :post
+  %br{:clear => :all}
 
 #history
   =partial 'workday/history_monthly'

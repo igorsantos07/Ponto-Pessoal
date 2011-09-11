@@ -3,6 +3,8 @@ $lightTeal: #F1F8F8
 $lightDarkTeal: #C7D8D8
 $almostWhite: #F0F0EE
 
+$mainSpacing: 40px
+
 =history_border($width)
   border-color: white
   border-style: solid
@@ -15,32 +17,42 @@ body
 #header
   color: white
   background-color: $darkTeal
-  padding: 10px 0px 1px 0px
+  padding: 1px
   text-align: center
   text-shadow: 1px 1px 5px $lightDarkTeal
 
 #content
   width: 600px
-  margin: 15px auto
+  margin: $mainSpacing auto 0px auto
   text-align: center
-  #buttons
-    #main_button input
-      font-size: 30px
-      width: (110px + 6px) * 3
-      height: 120px
-    #secondary_buttons form
-      display: inline
-      padding: 0px
-      margin: 0px
-      input
+  #buttons_block
+    width: 120px + ((110px + 6px) * 3) + 30px
+    margin: auto
+    #clock
+      height: 160px
+      float: left
+      margin: 0px 10px
+    #buttons
+      height: 160px
+      float: left
+      #main_button input
+        font-size: 30px
+        width: (110px + 6px) * 3
+        height: 120px
+      #secondary_buttons form
         display: inline
-        width: 110px
-        height: 35px
-        margin: 5px 2px
+        padding: 0px
+        margin: 0px
+        input
+          display: inline
+          width: 110px
+          height: 35px
+          margin: 5px 2px
+
   #history
-    margin-top: 10px
+    margin-top: $mainSpacing
     border-top: 1px dashed $darkTeal
-    padding: 10px 50px 0px 50px
+    padding: $mainSpacing 50px 0px 50px
 
     table.history
       font-size: 13px
