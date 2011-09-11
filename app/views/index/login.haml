@@ -1,0 +1,13 @@
+-content_for :title do
+  -'Login'
+
+.flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join
+-form_tag(url(:index, :create_session)) do
+  .field-line{:data => {:role => :fieldcontain}}
+    =label_tag :login, :caption => 'Login: '
+    =text_field_tag :login, :value => params[:login]
+  .field-line{:data => {:role => :fieldcontain}}
+    =label_tag :password, :caption => 'Senha: '
+    =password_field_tag :password, :value => params[:password]
+  .buttons-line{:data => {:role => :fieldcontain}}
+    =submit_tag 'Logar', 'data-inline' => true
