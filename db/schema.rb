@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 3) do
+ActiveRecord::Schema.define(:version => 5) do
 
   create_table "accounts", :force => true do |t|
     t.string "name"
@@ -25,11 +25,13 @@ ActiveRecord::Schema.define(:version => 3) do
 
   create_table "workdays", :force => true do |t|
     t.date    "day"
-    t.time    "enter"
-    t.time    "go_lunch"
-    t.time    "back_lunch"
-    t.time    "out"
+    t.string  "enter"
+    t.string  "go_lunch"
+    t.string  "back_lunch"
+    t.string  "out",        :limit => nil
     t.integer "account_id"
   end
+
+  add_index "workdays", ["account_id", "day"], :name => "index_workdays_on_account_id_and_day"
 
 end
