@@ -1,7 +1,13 @@
-# Helper methods defined here can be accessed in any controller or view in the application
-
 PontoPessoal.helpers do
-  # def simple_helper_method
-  #  ...
-  # end
+
+  def greeting name
+    greeting = case Time.now.hour
+      when 00..11 then 'Bom dia'
+      when 12..17 then 'Boa tarde'
+      when 18..23 then 'Boa noite'
+    end
+
+    "#{greeting}, #{name}!"
+  end
+
 end

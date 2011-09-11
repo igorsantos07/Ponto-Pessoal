@@ -7,4 +7,8 @@
     =stylesheet_link_tag '/stylesheets/main.css'
     =javascript_include_tag settings.jquery_root+'jquery-1.6.1.min.js'
   %body
-    =yield
+    #header
+      %img{:src => '/images/logo.png'}
+      %h1=greeting current_account.name
+    #content
+      =yield
