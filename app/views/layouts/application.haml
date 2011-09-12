@@ -8,6 +8,7 @@
     =javascript_include_tag settings.jquery_root+'jquery-1.6.1.min.js'
   %body
     #header
-      %h1=greeting current_account.name
+      -ap current_account
+      %h1=greeting ((!current_account.nil?)? current_account.name : nil)
     #content
       =yield
