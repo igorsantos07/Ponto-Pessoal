@@ -17,6 +17,11 @@ body {
   width: 600px;
   margin: 0px auto;
   text-align: center; }
+  #content #short_desc {
+    font-style: italic;
+    font-size: 13px;
+    width: 400px;
+    margin: 20px auto; }
   #content h2#main_title {
     font-size: 32px;
     font-variant: small-caps;
