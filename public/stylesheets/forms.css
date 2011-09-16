@@ -12,6 +12,15 @@ form {
     padding: 5px 10px;
     margin: 5px 0px 20px 0px;
     font-size: 16px; }
+  form input.invalid {
+    background-color: #ffbdbb;
+    border: 1px solid crimson; }
   form input[type=submit] {
     width: 150px;
     height: 50px; }
+  form span.error {
+    display: block;
+    margin: -15px 0px 20px 0px;
+    color: crimson;
+    font-style: italic;
+    font-size: 13px; }

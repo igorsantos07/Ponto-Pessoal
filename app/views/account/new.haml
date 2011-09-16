@@ -1,2 +1,8 @@
+-content_for :title do
+  ='Cadastrar'
+
+-content_for :assets do
+  =stylesheet_link_tag 'forms.css'
+
 -form_for :account, url(:account, :new) do |f|
   =partial "account/form", :locals => { :f => f }

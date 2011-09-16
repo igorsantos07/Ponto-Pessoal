@@ -1,27 +1,21 @@
-.group
-  =f.label :name
-  =f.error_message_on :name
-  =f.text_field :name, :class => :text_field
+=f.label 'Nome'
+=f.text_field :name
+=f.error_message_on :name
 
-.group
-  =f.label :email
-  =f.error_message_on :email
-  =f.text_field :email, :class => :text_field
+=f.label 'E-mail'
+=f.text_field :email
+=f.error_message_on :email
 
-.group
-  =f.label :login
-  =f.error_message_on :login
-  =f.text_field :login, :class => :text_field
+=f.label 'Login'
+=f.text_field :login
+=f.error_message_on :login
 
-.group
-  =f.label :password
-  =f.error_message_on :password
-  =f.password_field :password, :class => :password_field
+=f.label 'Senha'
+=f.password_field :password
+=f.error_message_on :password
 
-.group
-  =f.label :password_confirmation
-  =f.error_message_on :password_confirmation
-  =f.password_field :password_confirmation, :class => :password_field
+=f.label 'Repita a senha'
+=f.password_field :password_confirmation
+=f.error_message_on :password_confirmation
 
-.group
-  =f.submit pat(:save), :class => :button
+=f.submit 'Cadastrar'
