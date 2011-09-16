@@ -4,7 +4,6 @@
   =stylesheet_link_tag '/stylesheets/login.css'
 
 %h2
-  =image_tag 'calendar_clock.png'
   Ponto Pessoal
 
 .flash=[:error, :warning, :notice].map { |type| flash_tag(type, :class => "message #{type}") }.join

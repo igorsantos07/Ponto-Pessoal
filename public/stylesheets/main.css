@@ -9,6 +9,9 @@ body {
   padding: 1px;
   text-align: center;
   text-shadow: 1px 1px 5px #c7d8d8; }
+  #header img {
+    width: 50px;
+    vertical-align: middle; }
 
 #content {
   width: 600px;

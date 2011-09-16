@@ -10,6 +10,8 @@
 
   %body
     #header
-      %h1=greeting ((!current_account.nil?)? current_account.name : nil)
+      %h1
+        =image_tag 'calendar_clock.png'
+        =greeting ((!current_account.nil?)? current_account.name : nil)
     #content
       =yield
