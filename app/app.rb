@@ -17,8 +17,8 @@ class PontoPessoal < Padrino::Application
 	disable :store_location
 
   access_control.roles_for :any do |role|
-    role.protect "/"
-		role.allow ["/login", "/about",  "/signup", "/create_session"]
+    role.protect '/'
+		role.allow ["/login", '/sobre', '/cadastrar', '/esqueci-minha-senha']
   end
 
   access_control.roles_for :user, :admin do |role|
