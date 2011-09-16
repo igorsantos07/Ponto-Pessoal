@@ -12,7 +12,7 @@ PontoPessoal.controller :index do
 		render '/index/login'
 	end
 
-	post :create_session, :map => '/create_session' do
+	post :create_session, :map => '/login' do
     if account = Account.authenticate(params[:login], params[:password])
       set_current_account(account)
       redirect '/'
