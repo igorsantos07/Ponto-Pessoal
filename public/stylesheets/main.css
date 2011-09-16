@@ -14,7 +14,7 @@ body {
   width: 600px;
   margin: 0px auto;
   text-align: center; }
-  #content h2 {
+  #content h2.section_title {
     margin: 0px;
     width: 600px;
     background-color: #008c8c;

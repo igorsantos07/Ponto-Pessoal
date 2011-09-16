@@ -1,7 +1,7 @@
 -content_for :title do
   -'Hoje, '+Time.now.strftime(settings.full_date_no_seconds)
 
-%h2 Marcar ponto
+%h2.section_title Marcar ponto
 #buttons_block
   %img#clock{:src => '/images/old_machine.png'}
   #buttons
@@ -11,7 +11,7 @@
         =button_to button[:label], url(:workday, :set, :status => button[:status]), :method => :post
   %br{:clear => :all}
 
-%h2 Saldos
+%h2.section_title Saldos
 #history
   =partial 'workday/history_monthly'
   =partial 'workday/history_weekly'

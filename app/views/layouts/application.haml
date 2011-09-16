@@ -6,6 +6,8 @@
       Ponto Pessoal - #{yield_content :title}
     =stylesheet_link_tag '/stylesheets/main.css'
     =javascript_include_tag settings.jquery_root+'jquery-1.6.1.min.js'
+    =yield_content :assets
+
   %body
     #header
       %h1=greeting ((!current_account.nil?)? current_account.name : nil)

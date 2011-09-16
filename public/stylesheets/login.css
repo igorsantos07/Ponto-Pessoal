@@ -1,0 +1,24 @@
+h2 {
+  font-size: 32px;
+  font-variant: small-caps;
+  color: #006666; }
+  h2 img {
+    vertical-align: middle; }
+
+form {
+  width: 300px;
+  margin: 30px auto;
+  background: #c7d8d8;
+  padding: 15px 50px; }
+  form label {
+    display: block;
+    text-align: left;
+    font-style: italic; }
+  form input {
+    width: 278px;
+    padding: 5px 10px;
+    margin: 5px 0px 20px 0px;
+    font-size: 16px; }
+  form input[type=submit] {
+    width: 150px;
+    height: 50px; }
