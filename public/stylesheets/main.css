@@ -1,3 +1,12 @@
+a {
+  text-decoration: none;
+  color: #008c8c; }
+  a:hover {
+    color: #006666; }
+  a em {
+    font-style: normal;
+    font-variant: small-caps; }
+
 body {
   background-color: #e5e5e5;
   margin: 0px;
