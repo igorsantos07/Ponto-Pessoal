@@ -1,4 +1,23 @@
+-content_for :assets do
+  =stylesheet_link_tag 'about.css'
+
 -content_for :title do
   -'Sobre'
 
-%h1 Write content here
+:textile
+  O *Ponto Pessoal* foi criado para que você controle o seu horário no trabalho.
+
+  É útil para quem tem _horário flexível_ no trabalho, e pode chegar a hora que quiser - ou quase isso, mas ainda assim precisa cumprir uma carga horária semanal.
+
+  É o meu caso. Daí o que acontecia? Eu me perdia nos horários e não sabia nunca se estava dentro da carga esperada ou se tava devendo alguma hora.
+
+  Agora é simples, é só marcar o ponto no *Ponto Pessoal* e acompanhar a cada dia, semana e mês, seu _saldo de horas_!
+
+%p#feedback
+  Se quiser dar algum feedback, você pode falar diretamente com o desenvolvedor via email:
+  =mail_to 'igorsantos07@gmail.com', 'Igor&nbsp;Santos&nbsp;&lt;igorsantos07&nbsp;at&nbsp;gmail.com&gt;'
+  , ou pode ir até o
+  =link_to 'Github','https://github.com/igorsantos07/Ponto-Pessoal/issues'
+  abrir uma issue :D
+
+=link_to '< Voltar', url(:workday, :today), :id => :back

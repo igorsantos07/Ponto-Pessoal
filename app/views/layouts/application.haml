@@ -14,7 +14,7 @@
         =image_tag 'calendar_clock.png'
         =greeting ((!current_account.nil?)? current_account.name : nil)
     #content
-      -if current_account.nil?
+      -if current_account.nil? || (defined?(@show_title) && @show_title)
         %h2#main_title
           Ponto Pessoal
       =yield
