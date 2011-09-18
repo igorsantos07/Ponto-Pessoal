@@ -18,6 +18,7 @@ PontoPessoal.controllers :account do
       set_current_account(@account)
       redirect '/'
     else
+      @account.name = @account.name+' '+@account.surname
       flash[:warning] = 'Ocorreu um problema ao efetuar seu cadastro.'
       render 'account/new'
     end
