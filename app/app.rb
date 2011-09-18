@@ -22,12 +22,16 @@ class PontoPessoal < Padrino::Application
   end
 
   access_control.roles_for :user, :admin do |role|
-    role.project_module :workday, "/add"
+    role.project_module :workday, "/hoje"
   end
 
   get 'stylesheets/:file.css' do
     content_type 'text/css', :charset => 'utf-8'
     sass params[:file]
+  end
+
+  before '/cadastrar', '/esqueci-minha-senha', '/login' do
+    redirect '/' unless current_account.nil?
   end
 
   configure :development, :test do
