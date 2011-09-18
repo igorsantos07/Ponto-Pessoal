@@ -7,6 +7,7 @@
     =stylesheet_link_tag 'main.css'
     =javascript_include_tag settings.jquery_root+'jquery-1.6.1.min.js'
     =yield_content :assets
+    =partial 'base/ga' if Padrino::Application.production?
 
   %body
     #header
