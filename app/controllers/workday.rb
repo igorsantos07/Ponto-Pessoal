@@ -1,6 +1,6 @@
 PontoPessoal.controllers :workday do |controller|
 
-  def controller.this_week
+  def controller.this_week account
     now = Time.now
     if now.wday >= 1
       monday = now - (now.wday-1).day
@@ -10,7 +10,7 @@ PontoPessoal.controllers :workday do |controller|
       friday = now - 2.day
     end
 
-    Workday.find_all_by_account_id_and_day 1, (monday-1.day)..friday
+    Workday.find_all_by_account_id_and_day account, (monday-1.day)..friday
   end
 
 	get :index do
@@ -43,7 +43,7 @@ PontoPessoal.controllers :workday do |controller|
     @other_buttons = @all_buttons.reject {|button| button[:status] == likely_button}
     @likely_button = (@all_buttons - @other_buttons)[0]
 
-    @this_week = controller.this_week
+    @this_week = controller.this_week current_account
 
 		render '/workday/today'
 	end
