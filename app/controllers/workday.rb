@@ -1,10 +1,5 @@
 PontoPessoal.controllers :workday do |controller|
 
-  def controller.get_time hour, min = 0, secs = 0
-    now = Time.now
-    return Time.local now.year, now.month, now.day, hour, min, secs
-  end
-
 	get :index do
 		redirect url(:workday, :today)
 	end
@@ -12,10 +7,10 @@ PontoPessoal.controllers :workday do |controller|
 	get :today, :map => '/hoje' do
     now = Time.now
     time = {
-      :enter      => controller.get_time(0)..controller.get_time(11,59,59),
-      :go_lunch   => controller.get_time(12)..controller.get_time(12,29,59),
-      :back_lunch => controller.get_time(12,30)..controller.get_time(13,29,59),
-      :out        => controller.get_time(13,30)..controller.get_time(23,59,59),
+      :enter      => Time.get_time(0)..Time.get_time(11,59,59),
+      :go_lunch   => Time.get_time(12)..Time.get_time(12,29,59),
+      :back_lunch => Time.get_time(12,30)..Time.get_time(13,29,59),
+      :out        => Time.get_time(13,30)..Time.get_time(23,59,59),
     }
 
     @all_buttons = [

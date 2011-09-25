@@ -18,6 +18,7 @@ Bundler.require(:default, PADRINO_ENV)
 # Add your before load hooks here
 #
 Padrino.before_load do
+  require 'config/ruby_changes'
 end
 
 ##
