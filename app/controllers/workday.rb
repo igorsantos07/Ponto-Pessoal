@@ -1,5 +1,18 @@
 PontoPessoal.controllers :workday do |controller|
 
+  def controller.this_week
+    now = Time.now
+    if now.wday >= 1
+      monday = now - (now.wday-1).day
+      friday = now - (now.wday-5).day
+    else
+      monday = now - 6.day
+      friday = now - 2.day
+    end
+
+    Workday.find_all_by_account_id_and_day 1, (monday-1.day)..friday
+  end
+
 	get :index do
 		redirect url(:workday, :today)
 	end
@@ -29,6 +42,8 @@ PontoPessoal.controllers :workday do |controller|
 
     @other_buttons = @all_buttons.reject {|button| button[:status] == likely_button}
     @likely_button = (@all_buttons - @other_buttons)[0]
+
+    @this_week = controller.this_week
 
 		render '/workday/today'
 	end

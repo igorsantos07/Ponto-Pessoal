@@ -1,3 +1,5 @@
+-days = ['Seg','Ter','Qua','Qui','Sex']
+
 %table.history.daily
   %thead
     %tr
@@ -6,34 +8,39 @@
       %th Almoço
       %th Saída
       %th Saldo
+      %th Balanço
   %tbody
-    %tr
-      %th Seg
-      %td 9h
-      %td 12h ~ 13h
-      %td 19h
-      %td.balance.positive 9h / 8h
-    %tr
-      %th Ter
-      %td 10h30
-      %td 12h30 ~ 13h30
-      %td 18h30
-      %td.balance.negative 15h30 / 16h
-    %tr
-      %th Qua
-      %td ---
-      %td ---
-      %td ---
-      %td.balance.future +8h10 / 24h
-    %tr
-      %th Qui
-      %td ---
-      %td ---
-      %td ---
-      %td.balance.future +8h10 / 32h
-    %tr
-      %th Sex
-      %td ---
-      %td ---
-      %td ---
-      %td.balance.future +8h10 / 40h
+    -week_balance = {:hour => 0, :min => 0}
+    -5.times do |d|
+      -day = @this_week[d]
+      -week_balance[:hour] += day.balance[:hour]
+      -week_balance[:min] += day.balance[:min]
+      -if week_balance[:min] >= 60
+        -week_balance[:hour] += 1
+        -week_balance[:min] -= 60
+      -balance_status = case day.balance[:hour]
+        -when 0...8 then :negative
+        -#-when 8 then if day.balance[:min] == 0 then :neutral else :positive end
+        -else :positive
+      %tr
+        %th=days[d]
+        %td=day[:enter] || '---'
+        %td
+          -if !day[:go_lunch].nil? && !day[:back_lunch].nil?
+            =day[:go_lunch]+' ~ '+day[:back_lunch]
+          -else
+            ='---'
+        %td=day[:out] || '---'
+        %td.balance{:class => balance_status}
+          =day.balance[:hour].to_s+':'+('%02d' % day.balance[:min].to_s)
+        %td.balance{:class => balance_status}
+          =week_balance[:hour].to_s+':'+('%02d' % week_balance[:min].to_s)+' / '+(8*(d+1)).to_s+'h'
+
+
+
+-#    %tr
+-#      %th Sex
+-#      %td ---
+-#      %td ---
+-#      %td ---
+-#      %td.balance.future +8h10 / 40h
