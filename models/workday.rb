@@ -5,7 +5,7 @@ class Workday < ActiveRecord::Base
     if @balance.nil?
       now = Time.now
       parts = {
-        :enter      => (!self[:enter].nil?)? self[:enter].split(':') : [10,0],
+        :enter      => (!self[:enter].nil?)? self[:enter].split(':') : [9,0],
         :go_lunch   => (!self[:go_lunch].nil?)? self[:go_lunch].split(':') : nil,
         :back_lunch => (!self[:back_lunch].nil?)? self[:back_lunch].split(':') : nil,
         :out        => (!self[:out].nil?)? self[:out].split(':') : [18,0],

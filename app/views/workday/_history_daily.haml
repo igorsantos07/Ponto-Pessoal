@@ -12,7 +12,7 @@
   %tbody
     -week_balance = {:hour => 0, :min => 0}
     -5.times do |d|
-      -day = @this_week[d]
+      -day = @this_week[d] || Workday.new
       -week_balance[:hour] += day.balance[:hour]
       -week_balance[:min] += day.balance[:min]
       -if week_balance[:min] >= 60
