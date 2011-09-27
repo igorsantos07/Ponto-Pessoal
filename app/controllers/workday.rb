@@ -10,7 +10,7 @@ PontoPessoal.controllers :workday do |controller|
       friday = now - 2.day
     end
 
-    days = Workday.find_all_by_account_id_and_day account, (monday-1.day)..friday
+    days = Workday.find_all_by_account_id_and_day account[:id], (monday-1.day)..friday
     ordered_days = []
     days.each do |day|
       ordered_days[day.day.wday-1] = day
