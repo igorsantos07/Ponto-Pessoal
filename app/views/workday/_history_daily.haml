@@ -32,7 +32,7 @@
             ='---'
         %td=day[:out] || '---'
         %td.balance{:class => balance_status}
-          ='%d:%02d' % [day.balance[:min], day.balance[:hour]]
+          ='%d:%02d' % [day.balance[:hour], day.balance[:min]]
         %td.balance{:class => balance_status}
           ='%d:%02d / %dh' % [week_balance[:hour], week_balance[:min], (8*(d+1))]
 
