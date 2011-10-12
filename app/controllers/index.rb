@@ -1,9 +1,5 @@
 PontoPessoal.controller :index do
 
-  get :index, :map => '/' do
-    redirect url(:workday, :index)
-  end
-
 	get :about, :map => '/sobre' do
     @show_title = true
 		render '/index/about'

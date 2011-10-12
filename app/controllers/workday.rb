@@ -18,11 +18,7 @@ PontoPessoal.controllers :workday do |controller|
     ordered_days
   end
 
-	get :index do
-		redirect url(:workday, :today)
-	end
-
-	get :today, :map => '/hoje' do
+	get :today, :map => '/' do
     now = Time.now
     time = {
       :enter      => Time.get_time(0)..Time.get_time(11,59,59),
