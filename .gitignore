@@ -1,5 +1,6 @@
 .DS_Store
 nbproject
+Gemfile.lock
 log/**/*
 tmp/**/*
 bin/*
