@@ -54,10 +54,23 @@ PontoPessoal.controllers :workday do |controller|
     wd = Workday.find_by_account_id_and_day current_account.id, now.strftime(settings.iso_date)
     if !wd then wd = Workday.new({:account_id => current_account.id, :day => now.strftime(settings.iso_date)}) end
     wd.attributes = {params[:status] => now.strftime(settings.simple_time)}
-    ap wd
     wd.save
 
     redirect url(:workday, :today)
+  end
+
+  post :edit, :with => [:field, :day] do
+    wd = Workday.find_by_day_and_account_id params[:day], current_account.id
+
+    case params[:field]
+      when 'enter', 'out'
+        wd.attributes = { params[:field] => params[params[:field]] }
+      when 'lunch'
+        wd.attributes = { :go_lunch => params[:go_lunch], :back_lunch => params[:back_lunch] }
+    end
+    edited = wd.save
+
+    ActiveSupport::JSON.encode({ :edited => edited, :field => params[:field], :workday => wd.attributes })
   end
 
 end

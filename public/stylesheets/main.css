@@ -121,3 +121,12 @@ body {
         font-family: monospace; }
       #content #history table.history.daily th {
         font-variant: small-caps; }
+      #content #history table.history.daily form input {
+        font-family: monospace;
+        width: 40px;
+        padding: 0px;
+        text-align: center; }
+      #content #history table.history.daily form input[name=go_lunch] {
+        margin-right: 4px; }
+      #content #history table.history.daily form input[name=back_lunch] {
+        margin-left: 4px; }

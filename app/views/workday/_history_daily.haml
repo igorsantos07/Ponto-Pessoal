@@ -19,25 +19,23 @@
         -week_balance[:hour] += 1
         -week_balance[:min] -= 60
       -balance_status = case day.balance[:hour]
-        -when 0...8 then :negative
-        -#-when 8 then if day.balance[:min] == 0 then :neutral else :positive end
+        -when -1...8 then :negative
         -else :positive
-      %tr
+      %tr{'data-day' => day.day}
         %th=days[d]
-        %td=day[:enter] || '---'
-        %td
+        %td.time{'data-period' => :enter}=day[:enter] || '---'
+        %td.time{'data-period' => :lunch}
           -if !day[:go_lunch].nil? && !day[:back_lunch].nil?
             =day[:go_lunch]+' ~ '+day[:back_lunch]
           -else
             ='---'
-        %td=day[:out] || '---'
+        %td.time{'data-period' => :out}=day[:out] || '---'
         %td.balance{:class => balance_status}
           =day.balance[:hour].to_s+':'+('%02d' % day.balance[:min].to_s)
         %td.balance{:class => balance_status}
           =week_balance[:hour].to_s+':'+('%02d' % week_balance[:min].to_s)+' / '+(8*(d+1)).to_s+'h'
 
-
-
+-# STILL LACKS THE "FORESIGHT" FEATURE
 -#    %tr
 -#      %th Sex
 -#      %td ---

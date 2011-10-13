@@ -5,9 +5,6 @@
     %title
       Ponto Pessoal - #{yield_content :title}
     =stylesheet_link_tag 'main.css'
-    =javascript_include_tag settings.jquery_root+'jquery-1.6.1.min.js'
-    =yield_content :assets
-    =partial 'base/ga' if Padrino::Application.production?
 
   %body
     #header
@@ -19,3 +16,8 @@
         %h2#main_title
           Ponto Pessoal
       =yield
+
+    =javascript_include_tag settings.jquery_root+'jquery-1.6.1.min.js'
+    =javascript_include_tag '/javascripts/application.js'
+    =yield_content :assets
+    =partial 'base/ga' if Padrino::Application.production?
