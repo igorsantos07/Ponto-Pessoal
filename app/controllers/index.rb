@@ -5,7 +5,7 @@ PontoPessoal.controller :index do
 		render '/index/about'
 	end
 
-	get :login do
+	get :login, :map => '/login' do
 		render '/index/login'
 	end
 
@@ -19,7 +19,7 @@ PontoPessoal.controller :index do
     end
 	end
 
-	get :logout do
+	get :logout, :map => '/logout' do
     set_current_account(nil)
     redirect url(:index, :login)
 	end
